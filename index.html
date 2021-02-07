@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+            span {
+                font-size: 50px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <h1>(•_•) ( •_•)>⌐■-■ (⌐■_■) (▀̿Ĺ̯▀̿ ̿)</h1> -->
+        <span class="coolness">(•_•)</span>
+        <span class="coolness">( •_•)>⌐■-■</span>
+        <span class="coolness">(⌐■_■)</span>
+        <span class="coolness">(▀̿Ĺ̯▀̿ ̿)</span>
+
+        <script>
+            const coolDude = "(▀̿Ĺ̯▀̿ ̿)";
+
+            const spans = document.querySelectorAll(".coolness");
+            console.log(spans);
+            spans[0].style.display = "block";
+            for(let i = 1; i < spans.length; i++) {
+                setTimeout(() => {
+                    spans[i - 1].style.display = "none";
+                }, i*2500);
+                setTimeout(() => {
+                    spans[i].style.display = "block";
+                }, i*2500);
+            };
+
+        </script>
+    </body>
+</html>
