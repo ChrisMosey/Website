@@ -28,7 +28,12 @@ app.use(function (req, res, next) {
 // });
 
 app.get("/", (req, res) => {
-	res.json({ "foo": "bar" });
+	res.json([
+		"(•_•)",
+        "( •_•)>⌐■-■",
+        "(⌐■_■)",
+        "(▀̿Ĺ̯▀̿ ̿)",
+	]);
 });
 
 app.listen(80);

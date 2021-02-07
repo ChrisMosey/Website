@@ -1,25 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactElement } from 'react';
 
 async function GetAppData() {
-  const res = await fetch("http://localhost/home");
+  const res = await fetch("http://localhost/");
   const results = await res.json();
 
   return results
 }
 
 function Render() {
-  const [elements, setElements] = useState("elements");
+  const [elements, setElements] = useState<string[]>([]);
+
+  const renderedElements: ReactElement[] = [];
+
+    elements.forEach((element) => {
+        renderedElements.push((<span key={element} style={{fontSize:  "50px"}}>{element}</span>))
+    });
 
   useEffect(() => {
-    async () => {
+    (async () => {
       const elementResults = await GetAppData();
       setElements(elementResults);
-    }
-  })
+    })()
+  }, []);
 
   return (
     <div className="HomePage">
-     <p>{JSON.stringify(elements)}</p>
+     {renderedElements}
     </div>
   );
 }
