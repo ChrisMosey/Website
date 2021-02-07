@@ -5,9 +5,13 @@ const app = express();
 
 // Add headers
 app.use(function (req, res, next) {
+	const allowedOrigins = ["http://localhost:3000", "https://chrismosey.com"];
+	const origin = req.headers.origin;
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+	if (allowedOrigins.includes(origin)) {
+    	res.setHeader('Access-Control-Allow-Origin', origin);
+	}
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
