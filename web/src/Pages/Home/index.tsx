@@ -1,7 +1,8 @@
 import React, { useState, useEffect, ReactElement } from 'react';
+import { ApiUrl } from "../../config";
 
 async function GetAppData() {
-  const res = await fetch("http://localhost/");
+  const res = await fetch(ApiUrl());
   const results = await res.json();
 
   return results
