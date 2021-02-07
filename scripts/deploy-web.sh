@@ -1,10 +1,10 @@
 #!/bin/bash
 
-BUILD_DIR=./web/build/*
+BUILD_DIR=../web/build/*
 DEST_DIR=/var/www/html
 
-cd ./web && npm run build
+cd ../web && npm install && npm run build
 
-cp BUILD_DIR DEST_DIR
+cp -r $BUILD_DIR $DEST_DIR
 
 
