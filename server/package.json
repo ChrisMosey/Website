@@ -17,4 +17,7 @@
     "url": "https://github.com/ChrisMosey/Website/issues"
   },
   "homepage": "https://github.com/ChrisMosey/Website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
