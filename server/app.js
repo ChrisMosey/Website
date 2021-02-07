@@ -5,7 +5,7 @@ const app = express();
 
 // Add headers
 app.use(function (req, res, next) {
-	const allowedOrigins = ["http://localhost:3000", "https://chrismosey.com"];
+	const allowedOrigins = ["http://localhost:3000", "https://chrismosey.ca"];
 	const origin = req.headers.origin;
 
     // Website you wish to allow to connect
